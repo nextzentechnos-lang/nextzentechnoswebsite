@@ -8,6 +8,10 @@ import Join from './components/Join';
 import WhatsAppWidget from './components/WhatsAppWidget';
 import Footer from './components/Footer';
 
+// Premium Visual Enhancements
+import RouteProgressBar from './components/RouteProgressBar';
+import GlowBlobs from './components/GlowBlobs';
+
 // Dedicated Pages
 import AboutPage from './pages/AboutPage';
 import EventsPage from './pages/EventsPage';
@@ -40,10 +44,16 @@ export default function App() {
   return (
     <BrowserRouter>
       <div className="app-container">
+        {/* Glowing backdrop meshes */}
+        <GlowBlobs />
+
+        {/* SPA Page loading indicator */}
+        <RouteProgressBar />
+
         {/* Scroll Restorer */}
         <ScrollToTop />
 
-        {/* Global Navigation Header */}
+        {/* Global Navigation Header & Mobile bottom bar */}
         <Navbar />
 
         {/* Routing Panels */}
