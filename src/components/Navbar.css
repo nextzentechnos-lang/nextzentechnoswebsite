@@ -113,11 +113,11 @@
     display: none !important;
   }
   
-  /* Show Mobile Top Header showing Logo centered */
+  /* Show Mobile Top Header showing Logo centered + Safe Area top */
   .navbar-mobile-header {
     display: flex !important;
     position: fixed;
-    top: 12px;
+    top: calc(12px + env(safe-area-inset-top, 0px));
     left: 50%;
     transform: translateX(-50%);
     width: 92%;
@@ -140,11 +140,11 @@
     font-size: 1.15rem;
   }
   
-  /* Show iOS Style Floating Bottom Tab Bar */
+  /* Show iOS Style Floating Bottom Tab Bar + Safe Area bottom */
   .navbar-mobile-bottom-tabs {
     display: flex !important;
     position: fixed;
-    bottom: 16px;
+    bottom: calc(16px + env(safe-area-inset-bottom, 0px));
     left: 50%;
     transform: translateX(-50%);
     width: 92%;
@@ -160,6 +160,7 @@
   }
 
   .mobile-tab-item {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -170,18 +171,18 @@
     font-weight: 600;
     font-family: var(--font-body);
     transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-    gap: 4px;
-    padding: 6px 0;
+    gap: 3px;
+    padding: 8px 0;
     border-radius: 14px;
     flex: 1;
     min-width: 0;
-    border: 1px solid transparent;
   }
 
   .mobile-tab-svg {
     width: 20px;
     height: 20px;
     stroke: var(--text-muted);
+    fill: none;
     transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), stroke 0.25s ease;
   }
 
@@ -190,14 +191,29 @@
     color: var(--accent-orange);
   }
 
-  .mobile-tab-item.active {
-    background: rgba(255, 122, 0, 0.06);
-    border-color: rgba(255, 122, 0, 0.12);
-  }
-
   .mobile-tab-item.active .mobile-tab-svg {
     stroke: var(--accent-orange);
-    transform: scale(1.15);
+    transform: translateY(-2px) scale(1.12);
+  }
+
+  /* Glowing dot under active tab */
+  .mobile-tab-item::after {
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: var(--accent-orange);
+    box-shadow: 0 0 8px var(--accent-orange);
+    opacity: 0;
+    transform: scale(0);
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .mobile-tab-item.active::after {
+    opacity: 1;
+    transform: scale(1);
   }
 }
 
@@ -213,6 +229,6 @@
   
   .navbar-mobile-bottom-tabs {
     height: 58px;
-    bottom: 12px;
+    bottom: calc(12px + env(safe-area-inset-bottom, 0px));
   }
 }
