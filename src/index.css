@@ -316,7 +316,8 @@ section {
 /* ================= GLOBAL RESPONSIVE OVERRIDES ================= */
 @media (max-width: 768px) {
   .app-container {
-    padding-top: 80px;
+    padding-top: 76px;
+    padding-bottom: 96px;
   }
   section {
     padding: 80px 0;
