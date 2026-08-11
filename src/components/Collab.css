@@ -1,0 +1,250 @@
+.collab-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.collab-glow-1 {
+  top: 30%;
+  right: -5%;
+  width: 500px;
+  height: 500px;
+}
+
+.collab-container {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 75px;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.collab-content {
+  text-align: left;
+}
+
+.partner-card {
+  padding: 40px;
+  margin-top: 24px;
+  border: 1px solid var(--border-card);
+  box-shadow: var(--glass-shadow);
+}
+
+.partner-name {
+  font-size: 1.8rem;
+  color: var(--text-primary);
+  font-weight: 800;
+  margin-bottom: 6px;
+}
+
+.partner-tagline {
+  font-size: 1rem;
+  color: var(--text-muted);
+  font-style: italic;
+  margin-bottom: 24px;
+}
+
+.collab-description {
+  font-size: 0.98rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 30px;
+}
+
+.collab-benefits {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 35px;
+}
+
+.benefit-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+}
+
+.benefit-check {
+  color: var(--accent-orange);
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.collab-btn {
+  width: 100%;
+  justify-content: center;
+}
+
+/* Connection Visual */
+.collab-visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.connection-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 450px;
+}
+
+.collab-logo-box {
+  width: 120px;
+  height: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 16px;
+  border-radius: 20px !important;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  box-shadow: var(--glass-shadow);
+}
+
+.collab-logo {
+  height: 48px;
+  width: auto;
+}
+
+.quadsync-avatar {
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, var(--accent-orange) 0%, #ff3700 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.6rem;
+  font-weight: 800;
+  box-shadow: 0 0 15px rgba(255, 122, 0, 0.4);
+}
+
+.connection-line-container {
+  flex-grow: 1;
+  position: relative;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  margin: 0 15px;
+}
+
+.connection-svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.connection-bg-line {
+  stroke: rgba(255, 255, 255, 0.05);
+  stroke-width: 2px;
+  stroke-dasharray: 4, 4;
+  fill: none;
+}
+
+.connection-flow-line {
+  stroke: url(#collab-grad);
+  /* Fallback color if SVG gradients are not initialized */
+  stroke: var(--accent-orange);
+  stroke-width: 2px;
+  stroke-linecap: round;
+  stroke-dasharray: 20 80;
+  stroke-dashoffset: 100;
+  fill: none;
+  animation: connectionFlow 2.5s linear infinite;
+  filter: drop-shadow(0 0 6px var(--accent-orange));
+}
+
+@keyframes connectionFlow {
+  from {
+    stroke-dashoffset: 100;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+
+/* Responsive */
+@media (max-width: 992px) {
+  .collab-container {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+  
+  .collab-content {
+    text-align: center;
+  }
+  
+  .collab-benefits {
+    align-items: center;
+  }
+  
+  .connection-wrapper {
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .collab-section {
+    padding: 60px 0;
+  }
+
+  .partner-card {
+    padding: 24px 16px;
+    margin-top: 16px;
+  }
+
+  .partner-name {
+    font-size: 1.4rem;
+  }
+
+  .partner-tagline {
+    font-size: 0.88rem;
+    margin-bottom: 16px;
+  }
+
+  .collab-description {
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+  }
+
+  .collab-benefits {
+    margin-bottom: 25px;
+    align-items: flex-start;
+  }
+
+  .benefit-item {
+    font-size: 0.88rem;
+  }
+
+  .collab-logo-box {
+    width: 85px;
+    height: 85px;
+    padding: 10px;
+    font-size: 0.68rem;
+    border-radius: 12px !important;
+  }
+  
+  .collab-logo, .quadsync-avatar {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .quadsync-avatar {
+    font-size: 1.1rem;
+  }
+  
+  .connection-line-container {
+    margin: 0 10px;
+  }
+}
+
