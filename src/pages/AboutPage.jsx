@@ -6,7 +6,7 @@ export default function AboutPage() {
   return (
     <div className="about-page-view fade-in-up">
       {/* Page Header Introduction */}
-      <section className="about-intro-section" style={{ paddingBottom: '20px', paddingTop: 'clamp(80px, 10vw, 160px)' }}>
+      <section className="about-intro-section" style={{ paddingBottom: '20px', paddingTop: 'clamp(0px, 5vw, 160px)' }}>
         <div className="container">
           <div className="section-header" style={{ marginBottom: '40px' }}>
             <span className="section-tag">ABOUT US</span>

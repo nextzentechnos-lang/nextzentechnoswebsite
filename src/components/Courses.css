@@ -262,13 +262,13 @@
 
 @media (max-width: 768px) {
   .courses-section-page {
-    padding-top: 80px;
+    padding-top: 0;
   }
 }
 
 @media (max-width: 480px) {
   .courses-section-page {
-    padding-top: 80px;
+    padding-top: 0;
     padding-bottom: 60px;
   }
   

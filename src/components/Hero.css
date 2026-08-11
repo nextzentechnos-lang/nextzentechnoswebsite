@@ -299,14 +299,14 @@
 
 @media (max-width: 768px) {
   .hero-section {
-    padding-top: 80px;
+    padding-top: 0;
     padding-bottom: 40px;
   }
 }
 
 @media (max-width: 480px) {
   .hero-section {
-    padding-top: 80px;
+    padding-top: 0;
     padding-bottom: 40px;
   }
 
