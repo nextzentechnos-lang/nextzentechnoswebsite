@@ -1,20 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import './Navbar.css';
 
 export default function Navbar() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const closeMenu = () => {
+    setMobileMenuOpen(false);
+  };
+
   return (
-    <nav className="navbar-container">
-      
-      {/* ======================================================== */}
-      {/* 1. DESKTOP / LAPTOP NAVBAR                               */}
-      {/* ======================================================== */}
-      <div className="navbar-content glass-panel">
-        <NavLink to="/" className="nav-logo">
+    <nav className="navbar-container glass-panel">
+      <div className="navbar-content">
+        {/* Branding Logo */}
+        <NavLink to="/" className="nav-logo" onClick={closeMenu}>
           <img src="/Logo.png" alt="NextZen Logo" className="logo-img" />
           <span className="logo-text">Next<span className="orange-highlight">Zen Technos</span></span>
         </NavLink>
 
+        {/* Desktop Links List */}
         <ul className="nav-links-desktop">
           <li>
             <NavLink 
@@ -49,7 +53,6 @@ export default function Navbar() {
               Events
             </NavLink>
           </li>
-          
           <li>
             <NavLink 
               to="/contact" 
@@ -59,48 +62,37 @@ export default function Navbar() {
             </NavLink>
           </li>
         </ul>
+
+        {/* Mobile Hamburger Toggle Button */}
+        <button 
+          className={`hamburger-toggle ${mobileMenuOpen ? 'open' : ''}`} 
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          aria-label="Toggle navigation menu"
+        >
+          <span className="hamburger-line"></span>
+          <span className="hamburger-line"></span>
+          <span className="hamburger-line"></span>
+        </button>
       </div>
 
-      {/* ======================================================== */}
-      {/* 2. PHONE TOP LOGO HEADER (Mobile View Only)             */}
-      {/* ======================================================== */}
-      <div className="navbar-mobile-header glass-panel">
-        <NavLink to="/" className="nav-logo">
-          <img src="/Logo.png" alt="NextZen Logo" className="logo-img" />
-          <span className="logo-text">Next<span className="orange-highlight">Zen Technos</span></span>
+      {/* Mobile Drawer Menu Panel (Slides down on toggle) */}
+      <div className={`nav-links-mobile glass-panel ${mobileMenuOpen ? 'open' : ''}`}>
+        <NavLink to="/" end className="nav-btn-mobile" onClick={closeMenu}>
+          🏠 Home
+        </NavLink>
+        <NavLink to="/about" className="nav-btn-mobile" onClick={closeMenu}>
+          ℹ️ About Us
+        </NavLink>
+        <NavLink to="/courses" className="nav-btn-mobile" onClick={closeMenu}>
+          📚 Courses
+        </NavLink>
+        <NavLink to="/events" className="nav-btn-mobile" onClick={closeMenu}>
+          🗓️ Events
+        </NavLink>
+        <NavLink to="/contact" className="nav-btn-mobile mobile-cta" onClick={closeMenu}>
+          💬 Join Us
         </NavLink>
       </div>
-
-      {/* ======================================================== */}
-      {/* 3. PHONE BOTTOM NAVIGATION TAB BAR (Mobile View Only)   */}
-      {/* ======================================================== */}
-      <div className="navbar-mobile-bottom-tabs glass-panel">
-        <NavLink to="/" end className={({ isActive }) => `mobile-tab-item ${isActive ? 'active' : ''}`}>
-          <span className="mobile-tab-icon">🏠</span>
-          <span className="mobile-tab-label">Home</span>
-        </NavLink>
-        
-        <NavLink to="/about" className={({ isActive }) => `mobile-tab-item ${isActive ? 'active' : ''}`}>
-          <span className="mobile-tab-icon">ℹ️</span>
-          <span className="mobile-tab-label">About</span>
-        </NavLink>
-        
-        <NavLink to="/courses" className={({ isActive }) => `mobile-tab-item ${isActive ? 'active' : ''}`}>
-          <span className="mobile-tab-icon">📚</span>
-          <span className="mobile-tab-label">Courses</span>
-        </NavLink>
-        
-        <NavLink to="/events" className={({ isActive }) => `mobile-tab-item ${isActive ? 'active' : ''}`}>
-          <span className="mobile-tab-icon">🗓️</span>
-          <span className="mobile-tab-label">Events</span>
-        </NavLink>
-        
-        <NavLink to="/contact" className={({ isActive }) => `mobile-tab-item ${isActive ? 'active' : ''}`}>
-          <span className="mobile-tab-icon">💬</span>
-          <span className="mobile-tab-label">Join</span>
-        </NavLink>
-      </div>
-
     </nav>
   );
 }
