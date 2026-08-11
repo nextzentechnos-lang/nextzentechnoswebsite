@@ -260,9 +260,15 @@
   }
 }
 
+@media (max-width: 768px) {
+  .courses-section-page {
+    padding-top: 80px;
+  }
+}
+
 @media (max-width: 480px) {
   .courses-section-page {
-    padding-top: 110px;
+    padding-top: 80px;
     padding-bottom: 60px;
   }
   
