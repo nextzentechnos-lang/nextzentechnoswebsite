@@ -68,6 +68,7 @@ h1, h2, h3, h4, h5, h6 {
 .gradient-text {
   background: linear-gradient(135deg, #ffffff 20%, var(--accent-orange) 60%, var(--accent-pink) 100%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   background-size: 200% auto;
   animation: shineText 4s linear infinite;
