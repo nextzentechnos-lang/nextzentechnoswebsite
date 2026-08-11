@@ -77,17 +77,17 @@
   }
 }
 
-/* Restore standard floating corner coordinates on mobile */
+/* Reposition above the mobile SVG bottom tab bar */
 @media (max-width: 768px) {
   .whatsapp-floating-widget {
-    bottom: 30px;
+    bottom: 96px;
     right: 24px;
   }
 }
 
 @media (max-width: 480px) {
   .whatsapp-floating-widget {
-    bottom: 20px;
+    bottom: 96px;
     right: 16px;
     padding: 0;
     border-radius: 50% !important;
