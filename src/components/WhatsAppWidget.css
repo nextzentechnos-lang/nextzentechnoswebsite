@@ -77,23 +77,27 @@
   }
 }
 
-/* Hide on very small screens to avoid UI obstruction */
+/* Reposition above the iOS bottom tab bar on mobile */
+@media (max-width: 768px) {
+  .whatsapp-floating-widget {
+    bottom: 90px;
+    right: 24px;
+  }
+}
+
 @media (max-width: 480px) {
   .whatsapp-floating-widget {
-    bottom: 20px;
-    right: 20px;
-    padding: 10px 14px;
-  }
-  
-  .wa-text-box {
-    display: none; /* Icon only on mobile */
-  }
-  
-  .whatsapp-floating-widget {
+    bottom: 90px;
+    right: 16px;
+    padding: 0;
     border-radius: 50% !important;
     width: 50px;
     height: 50px;
     justify-content: center;
-    padding: 0;
+  }
+  
+  .wa-text-box {
+    display: none;
   }
 }
+
