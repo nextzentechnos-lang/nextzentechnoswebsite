@@ -1,0 +1,99 @@
+.whatsapp-floating-widget {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: rgba(18, 18, 22, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 122, 0, 0.25);
+  color: white;
+  text-decoration: none;
+  padding: 12px 18px;
+  border-radius: 16px !important;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5), 0 0 15px rgba(255, 122, 0, 0.15);
+  z-index: 9999;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  animation: slideInWidget 0.6s cubic-bezier(0.16, 1, 0.3, 1) 1.5s both;
+}
+
+.whatsapp-floating-widget:hover {
+  transform: translateY(-5px) scale(1.03);
+  border-color: rgba(255, 122, 0, 0.5);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.6), 0 0 25px rgba(255, 122, 0, 0.3);
+}
+
+.wa-icon-wrapper {
+  background: #25D366;
+  color: white;
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  box-shadow: 0 3px 10px rgba(37, 211, 102, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.whatsapp-floating-widget:hover .wa-icon-wrapper {
+  transform: rotate(15deg);
+}
+
+.wa-svg-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.wa-text-box {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  line-height: 1.3;
+}
+
+.wa-title {
+  font-family: var(--font-title);
+  color: var(--accent-orange);
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.wa-subtitle {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
+
+@keyframes slideInWidget {
+  from {
+    opacity: 0;
+    transform: translateY(50px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Hide on very small screens to avoid UI obstruction */
+@media (max-width: 480px) {
+  .whatsapp-floating-widget {
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 14px;
+  }
+  
+  .wa-text-box {
+    display: none; /* Icon only on mobile */
+  }
+  
+  .whatsapp-floating-widget {
+    border-radius: 50% !important;
+    width: 50px;
+    height: 50px;
+    justify-content: center;
+    padding: 0;
+  }
+}
