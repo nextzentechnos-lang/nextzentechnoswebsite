@@ -89,119 +89,6 @@
   background: linear-gradient(135deg, #ff881a 0%, #ff661a 100%);
 }
 
-/* Theme Switcher Layout */
-.theme-switcher-wrapper {
-  position: relative;
-  display: flex;
-  align-items: center;
-}
-
-.theme-toggle-trigger {
-  position: relative;
-  width: 32px;
-  height: 32px;
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 50%;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  outline: none;
-}
-
-.theme-toggle-trigger:hover {
-  border-color: var(--accent-orange);
-  transform: rotate(25deg);
-  box-shadow: 0 0 10px rgba(255, 122, 0, 0.15);
-}
-
-.theme-dot {
-  position: absolute;
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-}
-
-.dot-1 {
-  background-color: #ff7a00;
-  top: 7px;
-  left: 7px;
-}
-
-.dot-2 {
-  background-color: #00e5ff;
-  top: 7px;
-  right: 7px;
-}
-
-.dot-3 {
-  background-color: #ff007f;
-  bottom: 7px;
-  left: 11px;
-}
-
-.theme-dropdown-menu {
-  position: absolute;
-  top: 48px;
-  right: 0;
-  width: 170px;
-  padding: 14px;
-  z-index: 1100;
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  border-radius: 12px !important;
-  text-align: left;
-}
-
-.theme-dropdown-menu h4 {
-  font-family: var(--font-title);
-  font-size: 0.72rem;
-  text-transform: uppercase;
-  color: var(--text-muted);
-  margin-bottom: 10px;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-}
-
-.theme-options-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.theme-option-btn {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  background: none;
-  border: none;
-  width: 100%;
-  padding: 8px 10px;
-  border-radius: 8px;
-  color: var(--text-secondary);
-  font-size: 0.8rem;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.25s ease;
-}
-
-.theme-option-btn:hover {
-  background: rgba(255, 255, 255, 0.04);
-  color: white;
-}
-
-.theme-option-btn.active {
-  color: var(--accent-orange);
-  background: rgba(255, 122, 0, 0.06);
-}
-
-.option-color-preview {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-}
-
 /* Hiding Mobile Elements on Desktop */
 .navbar-mobile-header,
 .navbar-mobile-bottom-tabs {
@@ -226,7 +113,7 @@
     display: none !important;
   }
   
-  /* Show Mobile Top Header showing Logo + Color Switcher */
+  /* Show Mobile Top Header showing Logo */
   .navbar-mobile-header {
     display: flex !important;
     position: fixed;
@@ -237,7 +124,7 @@
     height: 52px;
     z-index: 1000;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center; /* Center logo in mobile top bar */
     padding: 0 18px;
     border-radius: 14px !important;
     border: 1px solid rgba(255, 255, 255, 0.05);
