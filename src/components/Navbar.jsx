@@ -19,14 +19,8 @@ function hexToRgb(hex) {
 }
 
 export default function Navbar() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [themeOpen, setThemeOpen] = useState(false);
   const [activeTheme, setActiveTheme] = useState(() => localStorage.getItem('nz-theme') || 'orange');
-
-  const closeMenu = () => {
-    setMobileMenuOpen(false);
-    setThemeOpen(false);
-  };
 
   // Theme apply hook
   useEffect(() => {
@@ -40,14 +34,17 @@ export default function Navbar() {
   }, [activeTheme]);
 
   return (
-    <nav className="navbar-container glass-panel">
-      <div className="navbar-content">
-        <NavLink to="/" className="nav-logo" onClick={closeMenu}>
+    <nav className="navbar-container">
+      
+      {/* ======================================================== */}
+      {/* 1. DESKTOP / LAPTOP NAVBAR                               */}
+      {/* ======================================================== */}
+      <div className="navbar-content glass-panel">
+        <NavLink to="/" className="nav-logo">
           <img src="/Logo.png" alt="NextZen Logo" className="logo-img" />
           <span className="logo-text">Next<span className="orange-highlight">Zen</span></span>
         </NavLink>
 
-        {/* Desktop Menu */}
         <ul className="nav-links-desktop">
           <li>
             <NavLink 
@@ -124,44 +121,79 @@ export default function Navbar() {
             </NavLink>
           </li>
         </ul>
-
-        {/* Mobile Hamburger Toggle */}
-        <button 
-          className={`hamburger-toggle ${mobileMenuOpen ? 'open' : ''}`} 
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          aria-label="Toggle navigation menu"
-        >
-          <span className="hamburger-line"></span>
-          <span className="hamburger-line"></span>
-          <span className="hamburger-line"></span>
-        </button>
       </div>
 
-      {/* Mobile Menu */}
-      <div className={`nav-links-mobile glass-panel ${mobileMenuOpen ? 'open' : ''}`}>
-        <NavLink to="/" end className="nav-btn-mobile" onClick={closeMenu}>Home</NavLink>
-        <NavLink to="/about" className="nav-btn-mobile" onClick={closeMenu}>About Us</NavLink>
-        <NavLink to="/courses" className="nav-btn-mobile" onClick={closeMenu}>Courses</NavLink>
-        <NavLink to="/events" className="nav-btn-mobile" onClick={closeMenu}>Events</NavLink>
-        
-        {/* Mobile Theme Selection Row */}
-        <div className="mobile-theme-row">
-          <span>Theme:</span>
-          <div className="mobile-theme-buttons">
-            {themes.map((t) => (
-              <button
-                key={t.key}
-                className={`mobile-theme-dot ${activeTheme === t.key ? 'active' : ''}`}
-                style={{ background: `linear-gradient(135deg, ${t.orange}, ${t.pink})` }}
-                onClick={() => { setActiveTheme(t.key); }}
-                title={t.name}
-              />
-            ))}
-          </div>
+      {/* ======================================================== */}
+      {/* 2. PHONE TOP LOGO HEADER (Mobile View Only)             */}
+      {/* ======================================================== */}
+      <div className="navbar-mobile-header glass-panel">
+        <NavLink to="/" className="nav-logo">
+          <img src="/Logo.png" alt="NextZen Logo" className="logo-img" />
+          <span className="logo-text">Next<span className="orange-highlight">Zen</span></span>
+        </NavLink>
+
+        {/* Theme Switcher inside mobile top header */}
+        <div className="theme-switcher-wrapper">
+          <button 
+            className="theme-toggle-trigger" 
+            onClick={() => setThemeOpen(!themeOpen)}
+            aria-label="Customize accent colors"
+          >
+            <span className="theme-dot dot-1"></span>
+            <span className="theme-dot dot-2"></span>
+            <span className="theme-dot dot-3"></span>
+          </button>
+          
+          {themeOpen && (
+            <div className="theme-dropdown-menu glass-panel">
+              <h4>Accent Glow</h4>
+              <div className="theme-options-grid">
+                {themes.map((t) => (
+                  <button 
+                    key={t.key} 
+                    className={`theme-option-btn ${activeTheme === t.key ? 'active' : ''}`}
+                    onClick={() => { setActiveTheme(t.key); setThemeOpen(false); }}
+                  >
+                    <span className="option-color-preview" style={{ background: `linear-gradient(135deg, ${t.orange}, ${t.pink})` }}></span>
+                    <span className="option-name">{t.name}</span>
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
-
-        <NavLink to="/contact" className="nav-btn-mobile mobile-cta" onClick={closeMenu}>Join Us</NavLink>
       </div>
+
+      {/* ======================================================== */}
+      {/* 3. PHONE BOTTOM NAVIGATION TAB BAR (Mobile View Only)   */}
+      {/* ======================================================== */}
+      <div className="navbar-mobile-bottom-tabs glass-panel">
+        <NavLink to="/" end className={({ isActive }) => `mobile-tab-item ${isActive ? 'active' : ''}`}>
+          <span className="mobile-tab-icon">🏠</span>
+          <span className="mobile-tab-label">Home</span>
+        </NavLink>
+        
+        <NavLink to="/about" className={({ isActive }) => `mobile-tab-item ${isActive ? 'active' : ''}`}>
+          <span className="mobile-tab-icon">ℹ️</span>
+          <span className="mobile-tab-label">About</span>
+        </NavLink>
+        
+        <NavLink to="/courses" className={({ isActive }) => `mobile-tab-item ${isActive ? 'active' : ''}`}>
+          <span className="mobile-tab-icon">📚</span>
+          <span className="mobile-tab-label">Courses</span>
+        </NavLink>
+        
+        <NavLink to="/events" className={({ isActive }) => `mobile-tab-item ${isActive ? 'active' : ''}`}>
+          <span className="mobile-tab-icon">🗓️</span>
+          <span className="mobile-tab-label">Events</span>
+        </NavLink>
+        
+        <NavLink to="/contact" className={({ isActive }) => `mobile-tab-item ${isActive ? 'active' : ''}`}>
+          <span className="mobile-tab-icon">💬</span>
+          <span className="mobile-tab-label">Join</span>
+        </NavLink>
+      </div>
+
     </nav>
   );
 }
