@@ -70,7 +70,7 @@ export default function ContactPage() {
       <div className="bg-grid-effect"></div>
       <div className="bg-radial-gradient contact-glow"></div>
 
-      <section className="contact-section-wrapper" style={{ paddingTop: 'clamp(0px, 5vw, 160px)', paddingBottom: '80px' }}>
+      <section className="contact-section-wrapper page-top-section" style={{ paddingBottom: '80px' }}>
         <div className="container">
           <div className="section-header">
             <span className="section-tag">CONNECT</span>

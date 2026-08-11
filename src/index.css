@@ -24,6 +24,9 @@
   --accent-gradient: linear-gradient(135deg, var(--accent-orange) 0%, var(--accent-pink) 50%, var(--accent-purple) 100%);
   --glow-orange: 0 0 25px rgba(255, 122, 0, 0.25);
   --glow-strong: 0 0 35px rgba(255, 122, 0, 0.5), 0 0 15px rgba(255, 0, 127, 0.2);
+
+  /* Mobile bottom navigation clearance */
+  --mobile-nav-h: 80px; /* 64px bar + 16px bottom offset */
 }
 
 /* ================= BASE STYLES ================= */
@@ -317,10 +320,11 @@ section {
 @media (max-width: 768px) {
   .app-container {
     padding-top: calc(76px + env(safe-area-inset-top, 0px));
-    padding-bottom: calc(96px + env(safe-area-inset-bottom, 0px));
+    padding-bottom: calc(var(--mobile-nav-h) + 16px + env(safe-area-inset-bottom, 0px));
+    overflow-x: hidden;
   }
   section {
-    padding: 60px 0;
+    padding: 40px 0 60px;
   }
   .section-header {
     margin-bottom: 45px;
@@ -335,7 +339,7 @@ section {
 
 @media (max-width: 480px) {
   section {
-    padding: 60px 0;
+    padding: 30px 0 50px;
   }
   .section-header {
     margin-bottom: 35px;
@@ -354,6 +358,37 @@ section {
     font-size: 0.9rem;
   }
 }
+
+/* ================= PAGE TOP SECTION (Dedicated route pages) ================= */
+/* Pages that are the first section after the top mobile header */
+.page-top-section {
+  padding-top: 160px; /* Desktop: clear the fixed glass navbar (top:20px + h:70px + 70px breathing) */
+}
+
+@media (max-width: 992px) {
+  .page-top-section {
+    padding-top: 120px;
+  }
+}
+
+@media (max-width: 768px) {
+  .page-top-section {
+    /* app-container already gives 76px padding-top; just add comfortable breathing room */
+    padding-top: 24px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-top-section {
+    padding-top: 16px !important;
+  }
+}
+
+/* ================= HORIZONTAL OVERFLOW SAFETY ================= */
+html {
+  overflow-x: hidden;
+}
+/* body already has overflow-x: hidden */
 
 /* ================= GLOWING BACKDROP DRIFT BLOBS ================= */
 .glow-blobs-container {

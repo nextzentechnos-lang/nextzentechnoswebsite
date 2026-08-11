@@ -203,14 +203,14 @@
 /* Responsive Rules */
 @media (max-width: 992px) {
   .hero-section {
-    padding-top: 140px;
+    padding-top: 120px;
     padding-bottom: 60px;
     text-align: center;
   }
   
   .hero-container {
     grid-template-columns: 1fr;
-    gap: 60px;
+    gap: 40px;
   }
   
   .hero-content {
@@ -300,14 +300,18 @@
 @media (max-width: 768px) {
   .hero-section {
     padding-top: 0;
-    padding-bottom: 40px;
+    padding-bottom: 30px;
+    min-height: auto;
+    align-items: flex-start;
+    padding-top: 20px;
   }
 }
 
 @media (max-width: 480px) {
   .hero-section {
-    padding-top: 0;
-    padding-bottom: 40px;
+    padding-top: 20px;
+    padding-bottom: 30px;
+    min-height: auto;
   }
 
   .hero-title {
