@@ -12,7 +12,10 @@ export default function Navbar() {
       <div className="navbar-content glass-panel">
         <NavLink to="/" className="nav-logo">
           <img src="/Logo.png" alt="NextZen Logo" className="logo-img" />
-          <span className="logo-text">Next<span className="orange-highlight">Zen</span> <span className="white-technos">Technos</span></span>
+          <div className="logo-text-group">
+            <span className="logo-text">Next<span className="orange-highlight">Zen</span> <span className="white-technos">Technos</span></span>
+            <span className="logo-subtitle">EdTech</span>
+          </div>
         </NavLink>
 
         <ul className="nav-links-desktop">
@@ -66,7 +69,10 @@ export default function Navbar() {
       <div className="navbar-mobile-header glass-panel">
         <NavLink to="/" className="nav-logo">
           <img src="/Logo.png" alt="NextZen Logo" className="logo-img" />
-          <span className="logo-text">Next<span className="orange-highlight">Zen</span> <span className="white-technos">Technos</span></span>
+          <div className="logo-text-group">
+            <span className="logo-text">Next<span className="orange-highlight">Zen</span> <span className="white-technos">Technos</span></span>
+            <span className="logo-subtitle">EdTech</span>
+          </div>
         </NavLink>
       </div>
 
