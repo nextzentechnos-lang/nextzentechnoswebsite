@@ -12,7 +12,7 @@ export default function Footer() {
             <img src="/Logo.png" alt="NextZen Logo" className="footer-logo-img" />
             <div className="logo-text-group">
               <span className="logo-text">Next<span className="orange-highlight">Zen</span> <span className="white-technos">Technos</span></span>
-              <span className="logo-subtitle">EdTech</span>
+              <span className="logo-subtitle">EDUTECH</span>
             </div>
           </div>
           <p className="footer-tagline">Connect. Learn. Build. Lead.</p>

@@ -14,7 +14,7 @@ export default function Navbar() {
           <img src="/Logo.png" alt="NextZen Logo" className="logo-img" />
           <div className="logo-text-group">
             <span className="logo-text">Next<span className="orange-highlight">Zen</span> <span className="white-technos">Technos</span></span>
-            <span className="logo-subtitle">EdTech</span>
+            <span className="logo-subtitle">EDUTECH</span>
           </div>
         </NavLink>
 
@@ -71,7 +71,7 @@ export default function Navbar() {
           <img src="/Logo.png" alt="NextZen Logo" className="logo-img" />
           <div className="logo-text-group">
             <span className="logo-text">Next<span className="orange-highlight">Zen</span> <span className="white-technos">Technos</span></span>
-            <span className="logo-subtitle">EdTech</span>
+            <span className="logo-subtitle">EDUTECH</span>
           </div>
         </NavLink>
       </div>
