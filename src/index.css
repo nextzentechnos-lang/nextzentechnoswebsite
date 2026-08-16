@@ -69,16 +69,17 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .gradient-text {
-  background: linear-gradient(135deg, #ffffff 20%, var(--accent-orange) 60%, var(--accent-pink) 100%);
+  background: linear-gradient(135deg, #ffffff 0%, var(--accent-orange) 35%, var(--accent-pink) 70%, var(--accent-purple) 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-size: 200% auto;
-  animation: shineText 4s linear infinite;
+  background-size: 300% 300%;
+  animation: shineText 6s ease infinite alternate;
 }
 
 @keyframes shineText {
-  to { background-position: 200% center; }
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
 }
 
 .neon-orange-text {
