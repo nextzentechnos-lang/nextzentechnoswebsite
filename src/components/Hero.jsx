@@ -46,6 +46,16 @@ $ _`,
     return () => clearInterval(timer);
   }, [activeTab]);
 
+  const dynamicWords = ['Developers', 'Engineers', 'Innovators', 'Leaders'];
+  const [wordIdx, setWordIdx] = useState(0);
+
+  useEffect(() => {
+    const wordInterval = setInterval(() => {
+      setWordIdx((prev) => (prev + 1) % dynamicWords.length);
+    }, 2800);
+    return () => clearInterval(wordInterval);
+  }, []);
+
   return (
     <section id="home" className="hero-section">
       {/* Interactive Constellation Nodes Background */}
@@ -63,6 +73,9 @@ $ _`,
           
           <h1 className="hero-title">
             <span className="gradient-text">Connect. Learn.<br />Build. Lead.</span>
+            <div className="dynamic-sub-word">
+              Empowering Future <span className="rotating-word">{dynamicWords[wordIdx]}</span>
+            </div>
           </h1>
           
           <p className="hero-description">
