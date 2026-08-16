@@ -6,6 +6,7 @@ import Services from './components/Services';
 import Events from './components/Events';
 import Join from './components/Join';
 import WhatsAppWidget from './components/WhatsAppWidget';
+import ZenLounge from './components/ZenLounge';
 import Footer from './components/Footer';
 
 // Premium Visual Enhancements
@@ -64,6 +65,9 @@ export default function App() {
           <Route path="/events" element={<EventsPage />} />
           <Route path="/contact" element={<ContactPage />} />
         </Routes>
+
+        {/* Global Developer Refreshment Lounge Modal & Floating Button */}
+        <ZenLounge />
 
         {/* Global Sticky Callbox */}
         <WhatsAppWidget />
