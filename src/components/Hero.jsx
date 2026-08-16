@@ -58,8 +58,7 @@ $ _`,
           </div>
           
           <h1 className="hero-title">
-            Connect. Learn.<br />
-            <span className="gradient-text">Build. Lead.</span>
+            <span className="gradient-text">Connect. Learn.<br />Build. Lead.</span>
           </h1>
           
           <p className="hero-description">
