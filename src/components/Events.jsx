@@ -75,14 +75,6 @@ export default function Events() {
 
   const eventList = [
     {
-      title: "Data Analyst Structural Training",
-      desc: "Structural Training based Internship Program on Data Analytics. Hands-on learning with live projects.",
-      date: "📅 20th September 2026",
-      badge: "Featured Training",
-      link: "https://docs.google.com/forms/d/e/1FAIpQLSdITbmQojk8VoROk-qmApLIkIlF1zkoZ5FH5wxI3d86ChMqNg/viewform?usp=dialog",
-      btnText: "Register Now"
-    },
-    {
       title: "3 Hours - Power BI Bootcamp",
       desc: "Comprehensive hands-on session covering dashboard creation and analytics fundamentals.",
       date: "📅 To Be Announced",
