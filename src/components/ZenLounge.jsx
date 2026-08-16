@@ -22,9 +22,17 @@ export default function ZenLounge() {
 
   const handleTypingChange = (e) => {
     const val = e.target.value;
-    if (!startTime) setStartTime(Date.now());
+    
+    // Auto-start timer on first character typed
+    let currentStartTime = startTime;
+    if (!currentStartTime && val.length > 0) {
+      currentStartTime = Date.now();
+      setStartTime(currentStartTime);
+    }
+    
     setInputVal(val);
 
+    // Calculate accuracy
     let correctChars = 0;
     for (let i = 0; i < val.length; i++) {
       if (val[i] === targetSnippet[i]) correctChars++;
@@ -32,11 +40,23 @@ export default function ZenLounge() {
     const acc = val.length > 0 ? Math.round((correctChars / val.length) * 100) : 100;
     setAccuracy(acc);
 
+    // Live continuous WPM calculation
+    if (currentStartTime && val.length > 3) {
+      const elapsedSeconds = (Date.now() - currentStartTime) / 1000;
+      if (elapsedSeconds > 0.5) {
+        // Standard formula: 1 word = 5 characters
+        const wordsTyped = correctChars / 5;
+        const liveWpm = Math.round((wordsTyped / elapsedSeconds) * 60);
+        setWpm(liveWpm);
+      }
+    }
+
+    // Check completion
     if (val === targetSnippet) {
-      const timeInMins = (Date.now() - startTime) / 60000;
-      const words = targetSnippet.split(' ').length;
-      const calculatedWpm = Math.round(words / timeInMins);
-      setWpm(calculatedWpm);
+      const totalSeconds = Math.max(1, (Date.now() - (currentStartTime || Date.now())) / 1000);
+      const finalWords = targetSnippet.length / 5;
+      const finalWpm = Math.round((finalWords / totalSeconds) * 60);
+      setWpm(finalWpm);
     }
   };
 
@@ -182,12 +202,25 @@ export default function ZenLounge() {
                 <div className="snippet-display-box">
                   <code>
                     {targetSnippet.split('').map((char, index) => {
-                      let color = '#a0a0b8';
+                      let color = '#80809c';
+                      let bg = 'transparent';
                       if (index < inputVal.length) {
                         color = inputVal[index] === char ? '#27c93f' : '#ff5f56';
+                      } else if (index === inputVal.length) {
+                        color = '#ffffff';
+                        bg = 'rgba(255, 122, 0, 0.4)';
                       }
                       return (
-                        <span key={index} style={{ color, fontWeight: index < inputVal.length ? '700' : '400' }}>
+                        <span 
+                          key={index} 
+                          style={{ 
+                            color, 
+                            background: bg,
+                            fontWeight: index < inputVal.length ? '700' : '400',
+                            borderRadius: '2px',
+                            padding: '0 1px'
+                          }}
+                        >
                           {char}
                         </span>
                       );
@@ -196,13 +229,20 @@ export default function ZenLounge() {
                 </div>
 
                 <textarea
+                  autoFocus
                   value={inputVal}
                   onChange={handleTypingChange}
                   placeholder="Type the exact code above here as fast as you can..."
                   className="zen-code-input"
                   rows={2}
-                  disabled={wpm !== null}
+                  disabled={inputVal === targetSnippet}
                 />
+
+                {inputVal === targetSnippet && (
+                  <div className="completion-banner">
+                    🎉 Excellent! Completed at <strong>{wpm} WPM</strong> with <strong>{accuracy}%</strong> accuracy.
+                  </div>
+                )}
 
                 <div className="speed-metrics-row">
                   <div className="metric-badge">

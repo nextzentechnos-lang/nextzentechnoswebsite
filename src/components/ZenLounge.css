@@ -175,6 +175,16 @@
   box-shadow: 0 0 15px rgba(255, 122, 0, 0.2);
 }
 
+.completion-banner {
+  background: rgba(39, 201, 63, 0.12);
+  border: 1px solid rgba(39, 201, 63, 0.4);
+  color: #27c93f;
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  text-align: center;
+}
+
 .speed-metrics-row {
   display: flex;
   align-items: center;
