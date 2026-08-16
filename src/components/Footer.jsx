@@ -10,7 +10,7 @@ export default function Footer() {
         <div className="footer-brand">
           <div className="footer-logo">
             <img src="/Logo.png" alt="NextZen Logo" className="footer-logo-img" />
-            <span className="logo-text">Next<span className="orange-highlight">Zen</span> Technos</span>
+            <span className="logo-text">Next<span className="orange-highlight">Zen</span> <span className="white-technos">Technos</span></span>
           </div>
           <p className="footer-tagline">Connect. Learn. Build. Lead.</p>
           <p className="footer-desc">

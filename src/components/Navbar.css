@@ -43,7 +43,12 @@
 
 .orange-highlight {
   color: var(--accent-orange);
-  text-shadow: 0 0 10px rgba(255, 122, 0, 0.3);
+  text-shadow: 0 0 10px rgba(255, 122, 0, 0.35);
+}
+
+.white-technos {
+  color: #ffffff;
+  text-shadow: none;
 }
 
 .nav-links-desktop {
