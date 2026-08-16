@@ -216,11 +216,37 @@ section {
   border: 1px solid var(--border-card);
   border-radius: 20px;
   padding: 36px;
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease, box-shadow 0.4s ease, background-color 0.4s ease;
   position: relative;
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  transform-style: preserve-3d;
+  will-change: transform, box-shadow;
+}
+
+/* Dynamic 3D Glare Light Reflection */
+.interactive-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+    600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    rgba(255, 122, 0, 0.14),
+    transparent 40%
+  );
+  border-radius: 20px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 2;
+}
+
+.interactive-card:hover::before {
+  opacity: 1;
 }
 
 .interactive-card::after {
@@ -249,10 +275,8 @@ section {
 }
 
 .interactive-card:hover {
-  transform: translateY(-8px);
   border-color: var(--border-card-hover);
-  box-shadow: 0 20px 40px rgba(255, 122, 0, 0.12);
-  background-color: rgba(18, 18, 24, 0.65);
+  background-color: rgba(18, 18, 24, 0.75);
 }
 
 

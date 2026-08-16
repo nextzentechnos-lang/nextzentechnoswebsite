@@ -1,10 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import ParticleCanvas from './ParticleCanvas';
+import use3DTilt from '../hooks/use3DTilt';
 import './Hero.css';
 
 export default function Hero({ onExploreCourses }) {
   const [activeTab, setActiveTab] = useState('community.json');
   const [displayedText, setDisplayedText] = useState('');
+  
+  const heroCardRef = useRef(null);
+  use3DTilt(heroCardRef, 14); // 3D tilt for hero visual card
 
   const tabContents = {
     'community.json': `{
@@ -83,7 +87,7 @@ $ _`,
 
         {/* Visual interactive elements (Interactive Terminal Mockup) */}
         <div className="hero-visual fade-in-up">
-          <div className="hero-visual-card glass-panel animated-float">
+          <div ref={heroCardRef} className="hero-visual-card glass-panel animated-float">
             {/* Terminal Header */}
             <div className="terminal-header-row">
               <div className="code-dots">

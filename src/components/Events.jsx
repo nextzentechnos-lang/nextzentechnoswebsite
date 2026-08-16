@@ -1,5 +1,47 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+import use3DTilt from '../hooks/use3DTilt';
 import './Events.css';
+function EventCard({ event }) {
+  const cardRef = useRef(null);
+  use3DTilt(cardRef, 10);
+
+  const handleMouseMove = (e) => {
+    const card = cardRef.current;
+    if (card) {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      card.style.setProperty('--mouse-x', `${x}px`);
+      card.style.setProperty('--mouse-y', `${y}px`);
+    }
+  };
+
+  return (
+    <div 
+      ref={cardRef}
+      className="interactive-card event-card"
+      onMouseMove={handleMouseMove}
+    >
+      <div className="event-badge-row">
+        <span className="event-badge">{event.badge}</span>
+        <span className="event-date-text">{event.date}</span>
+      </div>
+      <h3 className="event-title">{event.title}</h3>
+      <p className="event-desc">{event.desc}</p>
+      <div className="event-actions">
+        {event.btnText === "Register Now" ? (
+          <a href={event.link} target="_blank" rel="noopener noreferrer" className="btn-primary event-btn">
+            {event.btnText}
+          </a>
+        ) : (
+          <button disabled className="btn-secondary event-btn-disabled">
+            {event.btnText}
+          </button>
+        )}
+      </div>
+    </div>
+  );
+}
 
 export default function Events() {
   const targetDate = new Date('2026-09-20T10:00:00+05:30'); // Next structural program
@@ -109,25 +151,7 @@ export default function Events() {
         {/* Events Grid */}
         <div className="card-grid">
           {eventList.map((event, idx) => (
-            <div key={idx} className="interactive-card event-card">
-              <div className="event-badge-row">
-                <span className="event-badge">{event.badge}</span>
-                <span className="event-date-text">{event.date}</span>
-              </div>
-              <h3 className="event-title">{event.title}</h3>
-              <p className="event-desc">{event.desc}</p>
-              <div className="event-actions">
-                {event.btnText === "Register Now" ? (
-                  <a href={event.link} target="_blank" rel="noopener noreferrer" className="btn-primary event-btn">
-                    {event.btnText}
-                  </a>
-                ) : (
-                  <button disabled className="btn-secondary event-btn-disabled">
-                    {event.btnText}
-                  </button>
-                )}
-              </div>
-            </div>
+            <EventCard key={idx} event={event} />
           ))}
         </div>
       </div>
