@@ -68,7 +68,10 @@ $ _`,
       <div className="container hero-container">
         <div className="hero-content fade-in-up">
           <div className="badge-wrapper">
-            <span className="hero-badge">🚀 Next-Generation Tech Community</span>
+            <span className="hero-badge">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ marginRight: '6px' }}><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.71 1.1-1.35 1.4-1.9L4.5 16.5z"/><path d="M12 15l-3-3 7.35-7.35c.78-.78 2.05-.78 2.83 0v0c.78.78.78 2.05 0 2.83L12 15z"/></svg>
+              Next-Generation Tech Community
+            </span>
           </div>
           
           <h1 className="hero-title">

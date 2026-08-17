@@ -156,7 +156,9 @@ export default function ZenLounge() {
         className="zen-lounge-floating-btn pulse-glowing"
         title="Open Developer Refreshment Lounge"
       >
-        <span className="zen-btn-icon">⚡</span>
+        <span className="zen-btn-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+        </span>
         <span className="zen-btn-text">Zen Lounge</span>
       </button>
 
@@ -168,7 +170,7 @@ export default function ZenLounge() {
             {/* Modal Header */}
             <div className="zen-modal-header">
               <div className="zen-header-title">
-                <span className="zen-badge">✨ Interactive Lounge</span>
+                <span className="zen-badge">Interactive Lounge</span>
                 <h2>Developer Refreshment & Playground</h2>
               </div>
               <button onClick={() => setIsOpen(false)} className="zen-close-btn">×</button>
@@ -180,19 +182,19 @@ export default function ZenLounge() {
                 className={`zen-tab ${activeTab === 'speed' ? 'active' : ''}`}
                 onClick={() => setActiveTab('speed')}
               >
-                ⌨️ Speed Test
+                Speed Test
               </button>
               <button 
                 className={`zen-tab ${activeTab === 'quiz' ? 'active' : ''}`}
                 onClick={() => setActiveTab('quiz')}
               >
-                🧠 Tech Trivia
+                Tech Trivia
               </button>
               <button 
                 className={`zen-tab ${activeTab === 'audio' ? 'active' : ''}`}
                 onClick={() => setActiveTab('audio')}
               >
-                🎵 Focus Sound
+                Focus Sound
               </button>
             </div>
 
@@ -254,7 +256,7 @@ export default function ZenLounge() {
                     <span className="metric-lbl">Accuracy</span>
                   </div>
                   <button onClick={resetSpeedTest} className="btn-secondary zen-action-btn">
-                    🔄 Next Snippet
+                    Next Snippet
                   </button>
                 </div>
               </div>
@@ -289,15 +291,15 @@ export default function ZenLounge() {
 
                     {selectedOpt !== null && (
                       <button onClick={nextQuizQuestion} className="btn-primary zen-next-btn">
-                        {quizIdx + 1 === quizQuestions.length ? 'View Results' : 'Next Question ➔'}
+                        {quizIdx + 1 === quizQuestions.length ? 'View Results' : 'Next Question'}
                       </button>
                     )}
                   </div>
                 ) : (
                   <div className="quiz-result-box">
-                    <h3>🏆 Quiz Completed!</h3>
+                    <h3>Quiz Completed!</h3>
                     <p className="result-text">You scored <strong>{score}</strong> out of <strong>{quizQuestions.length}</strong>!</p>
-                    <button onClick={resetQuiz} className="btn-primary">Try Again 🔄</button>
+                    <button onClick={resetQuiz} className="btn-primary">Try Again</button>
                   </div>
                 )}
               </div>
@@ -312,7 +314,7 @@ export default function ZenLounge() {
                   </div>
                 </div>
 
-                <h3>🎧 Solfeggio 174Hz Focus Tone</h3>
+                <h3>Solfeggio 174Hz Focus Tone</h3>
                 <p className="audio-desc">
                   Designed for developers to reduce stress and maximize focus during coding sessions.
                 </p>

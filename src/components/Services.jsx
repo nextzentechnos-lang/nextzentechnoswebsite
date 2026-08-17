@@ -84,7 +84,7 @@ export default function Services() {
       <div className="container">
         <div className="section-header">
           <span className="section-tag">SERVICES</span>
-          <h2>🔥 Our Offerings</h2>
+          <h2>Our Offerings</h2>
           <p>We supply resources, support, and programs designed to transform tech aspirants into professional engineers.</p>
         </div>
 

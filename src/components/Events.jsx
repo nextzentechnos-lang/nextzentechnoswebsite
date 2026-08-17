@@ -77,7 +77,7 @@ export default function Events() {
     {
       title: "3 Hours - Power BI Bootcamp",
       desc: "Comprehensive hands-on session covering dashboard creation and analytics fundamentals.",
-      date: "📅 To Be Announced",
+      date: "To Be Announced",
       badge: "Bootcamp",
       link: "#",
       btnText: "Stay Tuned"
@@ -85,7 +85,7 @@ export default function Events() {
     {
       title: "Freelancing Career Workshop",
       desc: "Start your freelancing journey: find clients, build portfolios, and earn online.",
-      date: "📅 To Be Announced",
+      date: "To Be Announced",
       badge: "Workshop",
       link: "#",
       btnText: "Stay Tuned"
@@ -93,7 +93,7 @@ export default function Events() {
     {
       title: "Developer Networking Meetup",
       desc: "Connect with like-minded developers, exchange ideas, and expand your professional network.",
-      date: "📅 To Be Announced",
+      date: "To Be Announced",
       badge: "Meetup",
       link: "#",
       btnText: "Stay Tuned"
@@ -107,7 +107,7 @@ export default function Events() {
       <div className="container">
         <div className="section-header">
           <span className="section-tag">EVENTS</span>
-          <h2>🚀 Upcoming Bootcamps & Workshops</h2>
+          <h2>Upcoming Bootcamps & Workshops</h2>
           <p>Join our interactive learning sessions and level up your technical knowledge alongside industry experts.</p>
         </div>
 

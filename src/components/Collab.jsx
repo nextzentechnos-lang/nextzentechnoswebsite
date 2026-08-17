@@ -10,7 +10,7 @@ export default function Collab() {
         {/* Content Box */}
         <div className="collab-content fade-in-up">
           <span className="section-tag">PARTNERSHIP</span>
-          <h2>🤝 Strategic Collaboration</h2>
+          <h2>Strategic Collaboration</h2>
           
           <div className="partner-card glass-panel">
             <h3 className="partner-name">QuadSync Tech Solutions</h3>
