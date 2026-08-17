@@ -35,6 +35,7 @@
 .aui-gradient-text {
   background: linear-gradient(135deg, #f97316 0%, #ea580c 50%, #fb923c 100%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
