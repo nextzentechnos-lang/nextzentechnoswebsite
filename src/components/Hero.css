@@ -100,7 +100,7 @@
   gap: 16px;
 }
 
-/* Executive Metrics Highlight Card */
+/* Hero Visual Card representing Code */
 .hero-visual {
   position: relative;
   display: flex;
@@ -108,64 +108,35 @@
   align-items: center;
 }
 
-.hero-metrics-card {
+.hero-visual-card {
   width: 100%;
-  max-width: 360px;
-  padding: 32px 28px;
-  border-radius: 20px;
-  border: 1px solid var(--border-card-hover);
-  background: linear-gradient(145deg, rgba(14, 14, 22, 0.9) 0%, rgba(8, 8, 12, 0.95) 100%);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 25px rgba(255, 122, 0, 0.1);
+  max-width: 420px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  z-index: 2;
+  box-shadow: var(--glass-shadow);
+  border-radius: 16px;
+  overflow: hidden;
+  padding: 0;
 }
 
-.metric-header-row {
-  margin-bottom: 24px;
-  text-align: center;
-}
-
-.metric-header-tag {
-  font-family: var(--font-title);
-  font-size: 0.72rem;
-  font-weight: 800;
-  letter-spacing: 0.12em;
-  color: var(--accent-orange);
-  background: rgba(255, 122, 0, 0.1);
-  border: 1px solid rgba(255, 122, 0, 0.25);
-  padding: 4px 14px;
-  border-radius: 20px;
-}
-
-.metrics-list-group {
+.terminal-header-row {
   display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.metric-list-item {
-  display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  text-align: center;
+  padding: 12px 18px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  background: rgba(0, 0, 0, 0.15);
 }
 
-.metric-number {
-  font-family: var(--font-title);
-  font-size: 2.2rem;
-  font-weight: 800;
-  color: var(--text-primary);
-  line-height: 1.1;
+.code-dots {
+  display: flex;
+  gap: 6px;
 }
 
-.metric-detail {
-  font-size: 0.88rem;
+.terminal-title-text {
+  font-family: 'Fira Code', 'Courier New', Courier, monospace;
+  font-size: 0.72rem;
   color: var(--text-muted);
-  font-weight: 500;
-}
-
-.metric-divider {
-  height: 1px;
-  background: rgba(255, 255, 255, 0.06);
-  width: 100%;
 }
 
 .dot {
