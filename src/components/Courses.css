@@ -200,6 +200,41 @@
   color: var(--accent-orange);
 }
 
+.price-values-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.price-old {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  text-decoration: line-through;
+}
+
+/* Featured Course Card Enhancements */
+.featured-course-card {
+  position: relative;
+  border: 1px solid var(--accent-orange) !important;
+  background: linear-gradient(145deg, rgba(20, 16, 12, 0.9) 0%, rgba(12, 12, 18, 0.95) 100%) !important;
+  box-shadow: 0 15px 45px rgba(255, 122, 0, 0.15), 0 0 25px rgba(255, 122, 0, 0.08) !important;
+}
+
+.featured-banner-tag {
+  position: absolute;
+  top: -12px;
+  right: 20px;
+  background: linear-gradient(90deg, var(--accent-orange), #ff007f);
+  color: #000;
+  font-family: var(--font-title);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  padding: 3px 12px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(255, 122, 0, 0.4);
+}
+
 .course-card-actions {
   display: flex;
   gap: 12px;

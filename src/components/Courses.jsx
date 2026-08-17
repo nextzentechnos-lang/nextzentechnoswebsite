@@ -8,7 +8,12 @@ function CourseCard({ course, getLevelColorClass }) {
   use3DTilt(cardRef, 8); // Gentler tilt for standard-sized cards
 
   return (
-    <div ref={cardRef} className="interactive-card course-card fade-in-up">
+    <div ref={cardRef} className={`interactive-card course-card fade-in-up ${course.featured ? 'featured-course-card' : ''}`}>
+      {course.featured && (
+        <div className="featured-banner-tag">
+          {course.badgeText || "FEATURED PROGRAM"}
+        </div>
+      )}
       <div className="course-card-header">
         <span className={`course-level-badge ${getLevelColorClass(course.level)}`}>
           {course.level}
@@ -22,7 +27,10 @@ function CourseCard({ course, getLevelColorClass }) {
       <div className="course-card-details">
         <div className="course-price-row">
           <span className="price-label">Tuition Fee:</span>
-          <span className="price-value">{course.price}</span>
+          <div className="price-values-group">
+            {course.oldPrice && <span className="price-old">{course.oldPrice}</span>}
+            <span className="price-value">{course.price}</span>
+          </div>
         </div>
       </div>
 
@@ -33,11 +41,11 @@ function CourseCard({ course, getLevelColorClass }) {
           rel="noopener noreferrer" 
           className="btn-primary course-action-btn"
         >
-          Register Here
+          Enroll Now
         </a>
         <a 
           href={course.detailLink} 
-          target="_blank" 
+          target={course.detailLink.startsWith('http') ? "_blank" : "_self"} 
           rel="noopener noreferrer" 
           className="btn-secondary course-action-btn"
         >
@@ -53,6 +61,19 @@ export default function Courses() {
   const [activeCategory, setActiveCategory] = useState('All');
 
   const courseList = [
+    {
+      title: "Industry-Oriented Data Analyst Program",
+      level: "Career Track",
+      duration: "8 Weeks (2 Months)",
+      price: "₹999",
+      oldPrice: "₹2,499",
+      desc: "Become job-ready in 60 days. Master Excel with AI, SQL, Python, Power BI, NumPy, Pandas, Matplotlib, Seaborn & Statistics with live classes, 2 industry projects & placement support.",
+      category: "Data & AI",
+      featured: true,
+      badgeText: "INDEPENDENCE DAY OFFER",
+      detailLink: "/#data-analyst-program",
+      registerLink: "https://docs.google.com/forms/d/e/1FAIpQLSfu3pf3yfbMCApAIYUOxmS0daXqdFWlwmxihIjL5UbcuGLUmQ/viewform?usp=header"
+    },
     {
       title: "C Programming",
       level: "Beginner",
