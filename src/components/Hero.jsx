@@ -1,66 +1,10 @@
-import React, { useState, useEffect, useRef } from 'react';
-import ParticleCanvas from './ParticleCanvas';
-import use3DTilt from '../hooks/use3DTilt';
+import React from 'react';
 import './Hero.css';
 
 export default function Hero({ onExploreCourses }) {
-  const [activeTab, setActiveTab] = useState('community.json');
-  const [displayedText, setDisplayedText] = useState('');
-  
-  const heroCardRef = useRef(null);
-  use3DTilt(heroCardRef, 14); // 3D tilt for hero visual card
-
-  const tabContents = {
-    'community.json': `{
-  "status": "Operational",
-  "members": "5,000+ Active Members",
-  "mentors": "Industry Practitioners",
-  "careerAlerts": "Daily Updates",
-  "mentorship": "Structured Guidance"
-}`,
-    'placement.sh': `$ nextzen --fetch-opportunities
-[INFO] Verified technical internships retrieved.
-[INFO] Active early-career engineering roles synced.
-[INFO] Hackathons & tech summits active.
-$ _`,
-    'metrics.py': `>>> print(NextZen.impact)
-Demonstrated growth in student technical capability.
->>> print(NextZen.curriculum)
-Industry-aligned practical project frameworks.
->>> _`
-  };
-
-  useEffect(() => {
-    let index = 0;
-    const text = tabContents[activeTab];
-    setDisplayedText('');
-
-    const timer = setInterval(() => {
-      setDisplayedText((prev) => prev + text.charAt(index));
-      index++;
-      if (index >= text.length) {
-        clearInterval(timer);
-      }
-    }, 12); // Fast, typewriter speed
-
-    return () => clearInterval(timer);
-  }, [activeTab]);
-
-  const dynamicWords = ['Developers', 'Engineers', 'Innovators', 'Leaders'];
-  const [wordIdx, setWordIdx] = useState(0);
-
-  useEffect(() => {
-    const wordInterval = setInterval(() => {
-      setWordIdx((prev) => (prev + 1) % dynamicWords.length);
-    }, 2800);
-    return () => clearInterval(wordInterval);
-  }, []);
-
   return (
     <section id="home" className="hero-section">
-      {/* Interactive Constellation Nodes Background */}
-      <ParticleCanvas />
-      
+      {/* Background Grid Accent */}
       <div className="bg-grid-effect"></div>
       <div className="bg-radial-gradient top-left-glow"></div>
       <div className="bg-radial-gradient bottom-right-glow"></div>
@@ -77,7 +21,7 @@ Industry-aligned practical project frameworks.
           <h1 className="hero-title">
             <span className="gradient-text">Connect. Learn.<br />Build. Lead.</span>
             <div className="dynamic-sub-word">
-              Empowering Professional <span className="rotating-word">{dynamicWords[wordIdx]}</span>
+              Empowering Future Technology Leaders
             </div>
           </h1>
           
@@ -101,40 +45,30 @@ Industry-aligned practical project frameworks.
           </div>
         </div>
 
-        {/* Visual interactive elements (Interactive Terminal Mockup) */}
+        {/* Executive Highlights Card */}
         <div className="hero-visual fade-in-up">
-          <div ref={heroCardRef} className="hero-visual-card glass-panel animated-float">
-            {/* Terminal Header */}
-            <div className="terminal-header-row">
-              <div className="code-dots">
-                <span className="dot dot-red"></span>
-                <span className="dot dot-yellow"></span>
-                <span className="dot dot-green"></span>
+          <div className="hero-metrics-card glass-panel">
+            <div className="metric-header-row">
+              <span className="metric-header-tag">PLATFORM METRICS</span>
+            </div>
+            
+            <div className="metrics-list-group">
+              <div className="metric-list-item">
+                <span className="metric-number">5,000+</span>
+                <span className="metric-detail">Active Tech Members</span>
               </div>
-              <span className="terminal-title-text">console.log(NextZen)</span>
-            </div>
-
-            {/* Interactive File Tabs */}
-            <div className="terminal-tabs">
-              {Object.keys(tabContents).map((tabName) => (
-                <button
-                  key={tabName}
-                  className={`terminal-tab-btn ${activeTab === tabName ? 'tab-active' : ''}`}
-                  onClick={() => setActiveTab(tabName)}
-                >
-                  {tabName}
-                </button>
-              ))}
-            </div>
-
-            {/* Typewriter Code Display */}
-            <div className="code-snippet-body">
-              <pre className="code-snippet-pre">{displayedText}</pre>
+              <div className="metric-divider"></div>
+              <div className="metric-list-item">
+                <span className="metric-number">20+</span>
+                <span className="metric-detail">Industry Mentors</span>
+              </div>
+              <div className="metric-divider"></div>
+              <div className="metric-list-item">
+                <span className="metric-number">95%+</span>
+                <span className="metric-detail">Program Completion</span>
+              </div>
             </div>
           </div>
-          
-          <div className="floating-glow-circle circle-1"></div>
-          <div className="floating-glow-circle circle-2"></div>
         </div>
       </div>
 
