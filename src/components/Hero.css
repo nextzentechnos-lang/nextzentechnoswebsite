@@ -1,12 +1,13 @@
 .hero-section {
-  min-height: 100vh;
+  min-height: auto;
   display: flex;
   align-items: center;
   position: relative;
   background: linear-gradient(135deg, rgba(6, 6, 8, 0.95) 40%, rgba(12, 12, 15, 0.85) 100%), url('/bg.jpg');
   background-size: cover;
   background-position: center;
-  padding-top: 120px;
+  padding-top: 140px;
+  padding-bottom: 80px;
 }
 
 .top-left-glow {
