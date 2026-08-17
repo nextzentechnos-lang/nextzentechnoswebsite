@@ -12,21 +12,21 @@ export default function Hero({ onExploreCourses }) {
 
   const tabContents = {
     'community.json': `{
-  "status": "Online",
-  "members": "5000+ Active Learners",
-  "mentors": "20+ Industry Experts",
-  "dailyJobAlerts": true,
-  "doubtSupport": "24/7 Active"
+  "status": "Operational",
+  "members": "5,000+ Active Members",
+  "mentors": "Industry Practitioners",
+  "careerAlerts": "Daily Updates",
+  "mentorship": "Structured Guidance"
 }`,
-    'placement.sh': `$ nextzen --fetch-jobs
-[SUCCESS] 42 internship openings fetched!
-[SUCCESS] 18 entry-level roles active.
-[ALERT] hackathon alerts running.
+    'placement.sh': `$ nextzen --fetch-opportunities
+[INFO] Verified technical internships retrieved.
+[INFO] Active early-career engineering roles synced.
+[INFO] Hackathons & tech summits active.
 $ _`,
-    'metrics.py': `>>> print(NextZen.metrics)
-96.4% placement & completion rate.
->>> print(NextZen.confidence_boost)
-+250% average student progress.
+    'metrics.py': `>>> print(NextZen.impact)
+Demonstrated growth in student technical capability.
+>>> print(NextZen.curriculum)
+Industry-aligned practical project frameworks.
 >>> _`
   };
 
@@ -70,19 +70,19 @@ $ _`,
           <div className="badge-wrapper">
             <span className="hero-badge">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ marginRight: '6px' }}><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.71 1.1-1.35 1.4-1.9L4.5 16.5z"/><path d="M12 15l-3-3 7.35-7.35c.78-.78 2.05-.78 2.83 0v0c.78.78.78 2.05 0 2.83L12 15z"/></svg>
-              Next-Generation Tech Community
+              Technology & Career Ecosystem
             </span>
           </div>
           
           <h1 className="hero-title">
             <span className="gradient-text">Connect. Learn.<br />Build. Lead.</span>
             <div className="dynamic-sub-word">
-              Empowering Future <span className="rotating-word">{dynamicWords[wordIdx]}</span>
+              Empowering Professional <span className="rotating-word">{dynamicWords[wordIdx]}</span>
             </div>
           </h1>
           
           <p className="hero-description">
-            Welcome to <strong className="orange-highlight-text">NextZen Technos</strong> — your gateway to a growing tech community where students, developers, and innovators connect, learn real-world skills, build practical projects, and lead the future of technology.
+            Welcome to <strong className="orange-highlight-text">NextZen Technos</strong> — an integrated technology ecosystem connecting aspiring engineers with structured training, technical mentorship, verified career opportunities, and collaborative innovation.
           </p>
           
           <div className="hero-actions">

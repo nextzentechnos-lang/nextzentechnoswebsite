@@ -16,20 +16,20 @@ export default function Collab() {
             <h3 className="partner-name">QuadSync Tech Solutions</h3>
             <p className="partner-tagline">“Synchronizing Innovations with Success”</p>
             <p className="collab-description">
-              NextZen Technos collaborates with QuadSync Tech Solutions to conduct cutting-edge technology bootcamps, structured training programs, and industry-oriented learning initiatives designed to bridge the gap between academic theory and practical work.
+              NextZen Technos partners with QuadSync Tech Solutions to deliver enterprise-aligned technical bootcamps, structured training curricula, and practical learning initiatives that align academic outcomes with modern industry standards.
             </p>
             <div className="collab-benefits">
               <div className="benefit-item">
                 <span className="benefit-check">✓</span>
-                <span>Joint Certification Programs</span>
+                <span>Joint Certification Frameworks</span>
               </div>
               <div className="benefit-item">
                 <span className="benefit-check">✓</span>
-                <span>Industry Mentor Sessions</span>
+                <span>Practitioner-Led Mentorship</span>
               </div>
               <div className="benefit-item">
                 <span className="benefit-check">✓</span>
-                <span>Real-world Project Exposure</span>
+                <span>Production-Level Project Exposure</span>
               </div>
             </div>
             <a 
