@@ -66,9 +66,6 @@ export default function App() {
           <Route path="/contact" element={<ContactPage />} />
         </Routes>
 
-        {/* Global Developer Refreshment Lounge Modal & Floating Button */}
-        <ZenLounge />
-
         {/* Global Sticky Callbox */}
         <WhatsAppWidget />
 

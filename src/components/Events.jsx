@@ -111,35 +111,6 @@ export default function Events() {
           <p>Join our interactive learning sessions and level up your technical knowledge alongside industry experts.</p>
         </div>
 
-        {/* Countdown Ticker */}
-        <div className="countdown-container glass-panel fade-in-up">
-          <div className="countdown-header">
-            <span className="live-dot pulse-glowing"></span>
-            <h4>Next Internship Cohort Begins In:</h4>
-          </div>
-          <div className="countdown-timer">
-            <div className="countdown-segment">
-              <span className="timer-number">{String(timeLeft.days || 0).padStart(2, '0')}</span>
-              <span className="timer-label">Days</span>
-            </div>
-            <span className="timer-separator">:</span>
-            <div className="countdown-segment">
-              <span className="timer-number">{String(timeLeft.hours || 0).padStart(2, '0')}</span>
-              <span className="timer-label">Hours</span>
-            </div>
-            <span className="timer-separator">:</span>
-            <div className="countdown-segment">
-              <span className="timer-number">{String(timeLeft.minutes || 0).padStart(2, '0')}</span>
-              <span className="timer-label">Mins</span>
-            </div>
-            <span className="timer-separator">:</span>
-            <div className="countdown-segment">
-              <span className="timer-number">{String(timeLeft.seconds || 0).padStart(2, '0')}</span>
-              <span className="timer-label">Secs</span>
-            </div>
-          </div>
-        </div>
-
         {/* Events Grid */}
         <div className="card-grid">
           {eventList.map((event, idx) => (
