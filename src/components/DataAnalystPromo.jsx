@@ -296,37 +296,6 @@ export default function DataAnalystPromo() {
           </div>
         </div>
 
-        {/* 5. FINAL PRICING & ENROLLMENT CTA CARD */}
-        <div className="da-final-pricing-card glass-panel fade-in-up">
-          <div className="da-pricing-header">
-            <span className="da-pricing-badge">INDEPENDENCE DAY SPECIAL OFFER</span>
-            <h3>Lowest Fee Ever — Limited Batch</h3>
-            <p className="da-promo-motto">"Industry-focused. Skill-driven. Career ready."</p>
-          </div>
-
-          <div className="da-pricing-main">
-            <div className="da-price-tag-group">
-              <span className="da-old-price">Standard Fee: ₹2,499</span>
-              <div className="da-big-price">
-                ₹999 <span className="da-only-label">ONLY</span>
-              </div>
-              <div className="da-savings-highlight">SAVE ₹1,500 (Offer valid till 18 August 2026)</div>
-            </div>
-
-            <div className="da-pricing-action">
-              <a 
-                href={googleFormUrl} 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="btn-primary da-final-cta-btn pulse-glowing"
-              >
-                ENROLL NOW — ₹999
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              </a>
-              <p className="da-seats-counter">20 Seats Limit • Registrations Closing Soon</p>
-            </div>
-          </div>
-        </div>
 
       </div>
     </section>
