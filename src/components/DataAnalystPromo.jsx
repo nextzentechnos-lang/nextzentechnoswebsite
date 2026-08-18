@@ -161,11 +161,6 @@ export default function DataAnalystPromo() {
             <span className="da-flag-badge">
               INDEPENDENCE DAY SPECIAL OFFER
             </span>
-            <div className="da-partner-hero-badge">
-              <span className="da-partner-hero-label">Training Partner:</span>
-              <img src="/quadsync_logo.jpeg" alt="QuadSync Tech Solutions Logo" className="da-partner-hero-logo" />
-              <span className="da-partner-hero-name">QuadSync Tech Solutions</span>
-            </div>
             <span className="da-seats-badge">
               Limited Batch — 20 Seats Only
             </span>
@@ -209,6 +204,13 @@ export default function DataAnalystPromo() {
               <div className="da-save-badge">SAVE ₹1,500 (60% OFF)</div>
               
               <div className="da-mini-specs">
+                <div className="mini-spec-item mini-partner-item">
+                  <span className="mini-spec-label">Training Partner</span>
+                  <div className="mini-partner-brand">
+                    <img src="/quadsync_logo.jpeg" alt="QuadSync Logo" className="mini-partner-logo" />
+                    <span className="mini-partner-name">QuadSync Tech Solutions</span>
+                  </div>
+                </div>
                 <div className="mini-spec-item">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
                   <span>Starts: 01 Sept 2026</span>

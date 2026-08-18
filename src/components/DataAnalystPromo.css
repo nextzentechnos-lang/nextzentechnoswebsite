@@ -210,6 +210,44 @@
   padding-top: 16px;
 }
 
+.mini-partner-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start !important;
+  gap: 4px !important;
+  margin-bottom: 6px;
+}
+
+.mini-spec-label {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--accent-blue);
+  font-weight: 700;
+}
+
+.mini-partner-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.mini-partner-logo {
+  height: 22px;
+  width: auto;
+  object-fit: contain;
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 2px 4px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mini-partner-name {
+  font-size: 0.88rem;
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
 .mini-spec-item {
   display: flex;
   align-items: center;
