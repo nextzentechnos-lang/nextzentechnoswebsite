@@ -20,7 +20,6 @@ import Courses from './components/Courses';
 import ContactPage from './pages/ContactPage';
 
 import DataAnalystPromo from './components/DataAnalystPromo';
-import AUI from './components/AUI';
 
 // Scroll to top on route change helper component
 function ScrollToTop() {
@@ -38,7 +37,6 @@ function HomePage() {
     <div className="fade-in-up">
       <Hero onExploreCourses={() => navigate('/courses')} />
       <DataAnalystPromo />
-      <AUI />
       <Services />
       <Events />
       <Join />
