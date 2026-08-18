@@ -114,6 +114,11 @@
   width: auto;
 }
 
+.quadsync-img-logo {
+  object-fit: contain;
+  border-radius: 6px;
+}
+
 .quadsync-avatar {
   width: 48px;
   height: 48px;

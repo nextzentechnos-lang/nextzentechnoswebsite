@@ -25,6 +25,21 @@ function CourseCard({ course, getLevelColorClass }) {
       <p className="course-card-desc">{course.desc}</p>
       
       <div className="course-card-details">
+        {course.trainingPartner && (
+          <div className="course-partner-row">
+            <div className="partner-label-group">
+              <span className="partner-badge-label">Training Partner:</span>
+              <span className="partner-name-text">{course.trainingPartner.name}</span>
+            </div>
+            {course.trainingPartner.logo && (
+              <img 
+                src={course.trainingPartner.logo} 
+                alt={`${course.trainingPartner.name} Logo`} 
+                className="course-partner-logo" 
+              />
+            )}
+          </div>
+        )}
         <div className="course-price-row">
           <span className="price-label">Tuition Fee:</span>
           <div className="price-values-group">
@@ -71,6 +86,10 @@ export default function Courses() {
       category: "Data & AI",
       featured: true,
       badgeText: "INDEPENDENCE DAY OFFER",
+      trainingPartner: {
+        name: "QuadSync Tech Solutions",
+        logo: "/quadsync_logo.jpeg"
+      },
       detailLink: "/#data-analyst-program",
       registerLink: "https://docs.google.com/forms/d/e/1FAIpQLSfu3pf3yfbMCApAIYUOxmS0daXqdFWlwmxihIjL5UbcuGLUmQ/viewform?usp=header"
     },

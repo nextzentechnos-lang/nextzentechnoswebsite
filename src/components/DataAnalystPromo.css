@@ -65,6 +65,37 @@
   font-weight: 600;
 }
 
+.da-partner-hero-badge {
+  background: rgba(0, 229, 255, 0.08);
+  border: 1px solid rgba(0, 229, 255, 0.25);
+  padding: 5px 14px;
+  border-radius: 30px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.da-partner-hero-label {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.da-partner-hero-logo {
+  height: 20px;
+  width: auto;
+  object-fit: contain;
+  border-radius: 4px;
+  display: block;
+}
+
+.da-partner-hero-name {
+  font-size: 0.85rem;
+  color: var(--accent-blue);
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
 .da-hero-content-grid {
   display: grid;
   grid-template-columns: 1fr 320px;

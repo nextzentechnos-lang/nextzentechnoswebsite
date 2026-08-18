@@ -188,6 +188,50 @@
   align-items: center;
 }
 
+.course-partner-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+  padding-bottom: 12px;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.08);
+}
+
+.partner-label-group {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.partner-badge-label {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--accent-blue);
+  font-weight: 700;
+}
+
+.partner-name-text {
+  font-size: 0.9rem;
+  color: #e2e8f0;
+  font-weight: 600;
+}
+
+.course-partner-logo {
+  max-height: 36px;
+  max-width: 100px;
+  height: auto;
+  width: auto;
+  object-fit: contain;
+  border-radius: 6px;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 4px 6px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  flex-shrink: 0;
+}
+
 .price-label {
   font-size: 0.85rem;
   color: var(--text-muted);

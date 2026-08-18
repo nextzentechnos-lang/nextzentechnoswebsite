@@ -61,7 +61,7 @@ export default function Collab() {
 
             
             <div className="collab-logo-box quadsync-box glass-panel">
-              <div className="quadsync-avatar">Q</div>
+              <img src="/quadsync_logo.jpeg" alt="QuadSync Tech Solutions Logo" className="collab-logo quadsync-img-logo" />
               <span>QuadSync</span>
             </div>
           </div>

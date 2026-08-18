@@ -161,6 +161,11 @@ export default function DataAnalystPromo() {
             <span className="da-flag-badge">
               INDEPENDENCE DAY SPECIAL OFFER
             </span>
+            <div className="da-partner-hero-badge">
+              <span className="da-partner-hero-label">Training Partner:</span>
+              <img src="/quadsync_logo.jpeg" alt="QuadSync Tech Solutions Logo" className="da-partner-hero-logo" />
+              <span className="da-partner-hero-name">QuadSync Tech Solutions</span>
+            </div>
             <span className="da-seats-badge">
               Limited Batch — 20 Seats Only
             </span>
